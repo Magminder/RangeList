@@ -1,0 +1,21 @@
+{
+  "name": "rangelist",
+  "version": "1.0.0",
+  "description": "Test implementation for the range list class",
+  "main": "example.ts",
+  "scripts": {
+    "test": "jest ./__tests__",
+    "lint": "tslint --project ./tslint.json"
+  },
+  "author": "Alex Manko",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.4.1"
+  }
+}
