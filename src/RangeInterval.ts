@@ -53,7 +53,7 @@ export default class RangeInterval {
    */
   getExtension(range: RangeInterval): RangeInterval {
     if (!this.canBeJoined(range)) {
-      throw new RangeError('No intersections with passed range');
+      throw new RangeError('No connections with the passed range');
     }
     return new RangeInterval(
       Math.min(this.getStart(), range.getStart()),
@@ -65,15 +65,19 @@ export default class RangeInterval {
    * Returns subtraction result of current and passed interval
    */
   getSubtraction(range: RangeInterval): RangeInterval[] {
+    // it removes all the interval
     if (this.isCovered(range)) {
       return [];
     }
+    // subtraction on the left side
     if (range.getStart() <= this.getStart() && this.getStart() < range.getEnd()) {
       return [new RangeInterval(range.getEnd(), this.getEnd())];
     }
+    // subtraction on the right side
     if (range.getStart() < this.getEnd() && this.getEnd() <= range.getEnd()) {
       return [new RangeInterval(this.getStart(), range.getStart())];
     }
+    // subtraction in the middle
     if (this.getStart() < range.getStart() && range.getEnd() < this.getEnd()) {
       return [
         new RangeInterval(this.getStart(), range.getStart()),

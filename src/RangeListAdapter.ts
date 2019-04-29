@@ -50,10 +50,6 @@ export default class RangeListAdapter {
   /**
    * Prints out the list of ranges in the range list
    */
-
-  /**
-   * Prints out the list of ranges in the range list
-   */
   print(): void {
     Output.print(this.list.toString());
   }
